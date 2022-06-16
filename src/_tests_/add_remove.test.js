@@ -12,6 +12,6 @@ describe('Add and Remove Item Tests', () => {
 
   test('Remove item from the list', () => {
     Todo.removeTodo(0);
-    expect(list[0]).toBeNull;
+    expect(list[0]).toBeNull();
   });
 });

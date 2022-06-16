@@ -30,7 +30,6 @@ class Todo {
   }
 
   addTodo = () => {
-    const task = new Todo();
     const data = Todo.getTodo();
     const index = Todo.getIndex();
     const todo = {
@@ -38,7 +37,7 @@ class Todo {
       description: this.description,
       completed: false,
     };
-  
+
     if (data === null) {
       data.push(todo);
       localStorage.setItem('todo', JSON.stringify(data));
