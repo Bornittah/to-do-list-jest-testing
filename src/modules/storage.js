@@ -1,4 +1,4 @@
-export class Todo {
+class Todo {
   constructor(description) {
     this.description = description;
   }
@@ -28,7 +28,27 @@ export class Todo {
     index = todoList.length + 1;
     return index;
   }
-
+  addTodo = () => {
+    const task = new Todo();
+    const data = Todo.getTodo();
+    const index = Todo.getIndex();
+    const todo = {
+      index,
+      description: this.description,
+      completed: false,
+    };
+  
+    if (data === null) {
+      data.push(todo);
+      localStorage.setItem('todo', JSON.stringify(data));
+    }
+    let newtodoList = JSON.parse(localStorage.getItem('todo'));
+    newtodoList = [...data, todo];
+    localStorage.setItem('todo', JSON.stringify(newtodoList));
+    // Todo.clearInput();
+    Todo.display();
+    Todo.updateIndex();
+  }
   static updateIndex = () => {
     const todoList = Todo.getTodo();
     todoList.forEach((item) => {
@@ -129,3 +149,4 @@ export class Todo {
     });
   };
 }
+module.exports = Todo;
