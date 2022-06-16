@@ -28,6 +28,7 @@ class Todo {
     index = todoList.length + 1;
     return index;
   }
+
   addTodo = () => {
     const task = new Todo();
     const data = Todo.getTodo();
@@ -45,10 +46,11 @@ class Todo {
     let newtodoList = JSON.parse(localStorage.getItem('todo'));
     newtodoList = [...data, todo];
     localStorage.setItem('todo', JSON.stringify(newtodoList));
-    // Todo.clearInput();
+    Todo.clearInput();
     Todo.display();
     Todo.updateIndex();
   }
+
   static updateIndex = () => {
     const todoList = Todo.getTodo();
     todoList.forEach((item) => {
