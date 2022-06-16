@@ -38,27 +38,6 @@ export class Todo {
     localStorage.setItem('todo', JSON.stringify(todoList));
   }
 
-  addTodo = () => {
-    const data = Todo.getTodo();
-    const index = Todo.getIndex();
-    const todo = {
-      index,
-      description: this.description,
-      completed: false,
-    };
-
-    if (data === null) {
-      data.push(todo);
-      localStorage.setItem('todo', JSON.stringify(data));
-    }
-    let newtodoList = JSON.parse(localStorage.getItem('todo'));
-    newtodoList = [...data, todo];
-    localStorage.setItem('todo', JSON.stringify(newtodoList));
-    Todo.clearInput();
-    Todo.display();
-    Todo.updateIndex();
-  }
-
   static display() {
     const todoList = Todo.getTodo();
     const list = document.querySelector('.list');

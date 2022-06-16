@@ -1,10 +1,24 @@
+import Todo  from './modules/storage';
 
-const addItem = (task) => {
-const li = document.createElement('li');
-li.setAttribute('class', 'list-item');
-li.innerHTML = task;
-document.querySelector('.list').appendChild(li);
+const addTodo = () => {
+  const data = Todo.getTodo();
+  const index = Todo.getIndex();
+  const todo = {
+    index,
+    description: this.description,
+    completed: false,
+  };
 
+  if (data === null) {
+    data.push(todo);
+    localStorage.setItem('todo', JSON.stringify(data));
+  }
+  let newtodoList = JSON.parse(localStorage.getItem('todo'));
+  newtodoList = [...data, todo];
+  localStorage.setItem('todo', JSON.stringify(newtodoList));
+  Todo.clearInput();
+  Todo.display();
+  Todo.updateIndex();
 }
 
-module.exports = addItem;
+module.exports = addTodo;
