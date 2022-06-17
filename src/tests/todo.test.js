@@ -22,8 +22,7 @@ describe('Add and Remove Item Tests', () => {
 
   const task = 'Eat Supper';
   const todo = new Todo(task);
-  const list = document.querySelectorAll('.list');
-  
+
   test('Add item to the list', () => {
     todo.addTodo();
     const data = JSON.parse(localStorage.getItem('todo'));
@@ -35,5 +34,4 @@ describe('Add and Remove Item Tests', () => {
     const data = JSON.parse(localStorage.getItem('todo'));
     expect(data.length).toBe(0);
   });
-
 });
