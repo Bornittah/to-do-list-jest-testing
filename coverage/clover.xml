@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1655456478623" clover="3.2.0">
-  <project timestamp="1655456478625" name="All files">
+<coverage generated="1655457448754" clover="3.2.0">
+  <project timestamp="1655457448754" name="All files">
     <metrics statements="94" coveredstatements="82" conditionals="10" coveredconditionals="7" methods="27" coveredmethods="23" elements="131" coveredelements="112" complexity="0" loc="94" ncloc="94" packages="1" files="1" classes="1"/>
-    <file name="storage.js" path="/media/agasha/NITTAH/GitHub/microverse/to-do-list-jest-testing/src/modules/storage.js">
+    <file name="storage.js" path="/Users/shaqdeff/to-do-list-jest-testing/src/modules/storage.js">
       <metrics statements="94" coveredstatements="82" conditionals="10" coveredconditionals="7" methods="27" coveredmethods="23"/>
       <line num="3" count="4" type="stmt"/>
       <line num="6" count="1" type="stmt"/>

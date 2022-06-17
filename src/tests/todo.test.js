@@ -51,4 +51,10 @@ describe('Tests', () => {
     const data = JSON.parse(localStorage.getItem('todo'));
     expect(data[0].completed).toBe(true);
   });
+
+  test('Clear completed tasks', () => {
+    Todo.clearCompleted();
+    const data = JSON.parse(localStorage.getItem('todo'));
+    expect(data[0].completed).toBe(false);
+  });
 });
