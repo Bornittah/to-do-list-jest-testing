@@ -1,6 +1,6 @@
 import Todo from '../modules/storage.js';
 
-describe('Add and Remove Item Tests', () => {
+describe('Tests', () => {
   document.body.innerHTML = `<div class="container">
     <div class="title">
       <h2>Today's To Do</h2>
@@ -34,4 +34,22 @@ describe('Add and Remove Item Tests', () => {
     const data = JSON.parse(localStorage.getItem('todo'));
     expect(data.length).toBe(0);
   });
+
+  test('Edit task description', () => {
+    todo.addTodo();
+    new Todo('task1').addTodo();
+    new Todo('task2').addTodo();
+    new Todo('task3').addTodo();
+    const edittedTask = 'Take breakfast';
+    Todo.updateTodo(1, edittedTask);
+    const data = JSON.parse(localStorage.getItem('todo'));
+    expect(data[1].description).toBe(edittedTask);
+  });
+
+  test('Update completed task', () => {
+    Todo.completed(1, true);
+    const data = JSON.parse(localStorage.getItem('todo'));
+    expect(data[0].completed).toBe(true);
+  });
+  
 });
